@@ -1,0 +1,15 @@
+{
+    "students":[
+        {"name":"shlomo","age":35,"color":"blue"},
+        {"name":"ariel","age":22,"color":"yellow"},
+        {"name":"shimon","age":99,"color":"red"},
+        {"name":"yacov","age":66,"color":"green"}
+    ],
+
+    "famili":[
+        {"name":"yosefi","color":"green"},
+        {"name":"mengel","color":"pink"},
+        {"name":"ramon","color":"black"},
+        {"name":"cohen","color":"blue"}
+    ]
+}

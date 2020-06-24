@@ -1,0 +1,106 @@
+ <div class="all" style="display: flex;">
+
+ 
+    <div class="html"></div>
+    <div class="js"></div>
+    <div class="json"></div>
+    <div class="txt"></div>
+
+</div>
+
+
+<script>
+
+    let html = document.querySelector(".html");
+    let js = document.querySelector(".js");
+    let json = document.querySelector(".json");
+    let txt = document.querySelector(".txt");
+
+    // (function loadDoc(){
+
+    //     let httpAjax = new XMLHttpRequest();
+
+    //     httpAjax.onreadystatechange = function(){
+    //         if (this.readyState ==4 && this.status==200){
+    //             html.innerHTML = this.responseText
+    //         }
+    //     };
+    //     httpAjax.open("GET",'https://raw.githubusercontent.com/bresleveloper/db/master/ajax/comp-calc.html')
+    //     httpAjax.send()
+    // }());
+
+
+
+
+
+    // (function loadDoc(){
+
+    // let httpAjax = new XMLHttpRequest();
+
+    // httpAjax.onreadystatechange = function(){
+    //     if (this.readyState ==4 && this.status==200){
+    //         txt.innerHTML = this.responseText
+    //     }
+    // };
+    // httpAjax.open("GET",'https://raw.githubusercontent.com/bresleveloper/db/master/ajax/say%20ho.txt')
+    // httpAjax.send()
+    // }());
+
+
+
+
+
+    // (function loadDoc(){
+
+    // let httpAjax = new XMLHttpRequest();
+
+    // httpAjax.onreadystatechange = function(){
+    //     if (this.readyState ==4 && this.status==200){
+    //         js.innerHTML = this.responseText
+    //     }
+    // };
+    // httpAjax.open("GET",'https://raw.githubusercontent.com/bresleveloper/db/master/ajax/someDB.js')
+    // httpAjax.send()
+    // }());
+
+
+
+
+    // (function loadDoc(){
+
+    // let httpAjax = new XMLHttpRequest();
+
+    // httpAjax.onreadystatechange = function(){
+    //     if (this.readyState ==4 && this.status==200){
+    //         json.innerHTML = this.responseText
+    //     }
+    // };
+    // httpAjax.open("GET",'https://raw.githubusercontent.com/bresleveloper/db/master/ajax/someDB.json')
+    // httpAjax.send()
+    // }())
+
+
+
+
+    function doc(url,html){
+        let httpAjax = new XMLHttpRequest();
+
+        httpAjax.onreadystatechange = function(){
+        if (this.readyState ==4 && this.status==200){
+            console.log(JSON.parse(this.responseText));
+            
+            render(JSON.parse(this.responseText),json) 
+        }
+    };
+        httpAjax.open("GET",url)
+        httpAjax.send()
+    }
+    doc('https://raw.githubusercontent.com/bresleveloper/db/master/ajax/someDB.json',json)
+
+
+    function render(array,html){
+        console.log(array.jiraffs[0].name);
+        let ht = array.jiraffs[0]
+        html.innerHTML =  ht.name
+    }
+</script>

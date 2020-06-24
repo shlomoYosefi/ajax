@@ -1,0 +1,82 @@
+<div class="all"  style="display: flex;">
+    <div class="sinchroni" style="margin: auto;">
+        <button id="sin" >sinchroni</button>
+        <ul id="ulSin"></ul>
+    </div>
+
+    <div class="Asinchroni" style="margin: auto;">
+        <button id="Asin" >Asinchroni</button>
+        <ul id="ulAsin"></ul>
+    </div>
+
+    <div class="shone" style="margin: auto;">
+        <button id="shone" >shone</button>
+        <ul id="ulShone"></ul>
+    </div>
+</div>
+
+
+<script>
+    let date = new Date
+    let buttonSin = document.querySelector("#sin")
+    let buttonAsin = document.querySelector("#Asin")
+    let buttonshone = document.querySelector("#shone")
+
+
+    let sinchroni = document.querySelector("#ulSin")
+    let Asinchroni = document.querySelector("#ulAsin")
+    let shone = document.querySelector("#ulShone")
+
+
+
+    array = {
+        a:function(){return "index a"}, 
+        b:function(){return "index b"} ,
+        c:function(){return "index c"}, 
+        d:function(){return "index d"} ,
+        e:function(){setTimeout(()=>{Asinchroni.innerHTML += `<li> = im number 1 </li><br> `},1000)},
+        f:function(){setTimeout(()=>{Asinchroni.innerHTML += `<li> = im number 2 </li><br> `},500)},
+        g:function(){setTimeout(()=>{Asinchroni.innerHTML += `<li> = im number 3 </li><br> `},250)},
+        h:function(){setTimeout(()=>{Asinchroni.innerHTML += `<li> = im number 4 </li><br> `},800)},
+    }
+
+
+     buttonSin.onclick = function(){
+         
+        sinchroni.innerHTML += `<li>${date.getMilliseconds()}  = ${array.a()}</li><br> `
+        sinchroni.innerHTML += `<li>${date.getMilliseconds()}  = ${array.b()}</li><br> `
+        sinchroni.innerHTML += `<li>${date.getMilliseconds()}  = ${array.c()}</li><br> `
+        sinchroni.innerHTML += `<li>${date.getMilliseconds()}  = ${array.d()}</li><br> `
+     }
+
+
+
+     buttonAsin.onclick = function(){
+        
+        array.e()
+        array.f()
+        array.g()
+        array.h()
+      }
+
+      buttonshone.onclick = function(){          
+        function aa(){
+            setTimeout(()=>{
+                buttonshone.innerHTML +=`<li> im number 1 </il>`
+                function bb(){
+                    setTimeout(()=>{
+                        buttonshone.innerHTML +=`<li> im number 2 </il>`
+                        function cc(){
+                          setTimeout(()=>{
+                            buttonshone.innerHTML +=`<li> im number 2 </il>`
+                          })  
+                        }
+                    },250)
+                }
+            },1000)
+        }
+
+      }
+    
+
+</script>
