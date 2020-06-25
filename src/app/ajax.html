@@ -80,6 +80,9 @@
     // }())
 
 
+        
+        
+
 
 
     function doc(url,html){
@@ -89,18 +92,61 @@
         if (this.readyState ==4 && this.status==200){
             console.log(JSON.parse(this.responseText));
             
-            render(JSON.parse(this.responseText),json) 
+            html.innerHTML= render(JSON.parse(this.responseText),htmlString) 
         }
     };
         httpAjax.open("GET",url)
         httpAjax.send()
     }
-    doc('https://raw.githubusercontent.com/bresleveloper/db/master/ajax/someDB.json',json)
+    doc('https://raw.githubusercontent.com/shlomoYosefi/ajax/master/src/app/ajax.json',templat)
 
 
-    function render(array,html){
-        console.log(array.jiraffs[0].name);
-        let ht = array.jiraffs[0]
-        html.innerHTML =  ht.name
-    }
+
+
+
+
+
+
+    
+
+
+                            let templat = `<div ><ul style="color: [color];><li>
+                <label> name : </label> <span>[name]</span>
+                <label> ,age : </label> <span>[age]</span>
+                </li></ul></div><br>`
+​
+    function render(arr,templet){
+        console.log(arr);
+        
+        let htmlFinal=''
+        let myTemplet = templet
+        let j = /\[.*\]/g
+        let find = myTemplet.match(j)
+​
+        for (let i =0;i<find.length;i++){
+            find[i]=find[i].replace('[','').replace(']','')
+        }
+        arr.forEach(j => {
+            
+            let ht = templet
+            find.forEach(x=>{
+                ht = ht.replace(`[${x}]`,j[x])
+                
+                
+            })
+            
+            htmlFinal+=ht
+        }) 
+        console.log(htmlFinal);
+        return htmlFinal;
+        }
+            
+            
+     
+            
+            
+        
+        
+        
+    
 </script>
