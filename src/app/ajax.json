@@ -6,10 +6,10 @@
         {"name":"yacov","age":66,"color":"green"}
     ],
 
-    "famili":[
-        {"name":"yosefi","color":"green"},
-        {"name":"mengel","color":"pink"},
-        {"name":"ramon","color":"black"},
-        {"name":"cohen","color":"blue"}
+    "animals":[
+        {"name":"cat","age":12,"color":"green"},
+        {"name":"gog","age":14,"color":"pink"},
+        {"name":"hors","age":15,"color":"black"},
+        {"name":"bird","age":10,"color":"blue"}
     ]
 }
