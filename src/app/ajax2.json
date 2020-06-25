@@ -1,0 +1,15 @@
+{
+    "cats":[
+        {"name":"shunra","age":35,"color":"DarkRed"},
+        {"name":"shunri","age":22,"color":"DarkMagenta"},
+        {"name":"lili","age":99,"color":"DarkKhaki"},
+        {"name":"chuchu","age":66,"color":"DeepPink"}
+    ],
+
+    "jiraffs":[
+        {"name":"jir","age":12,"color":"Gold"},
+        {"name":"jira","age":14,"color":"LawnGreen"},
+        {"name":"jiraf","age":15,"color":"LightGoldenRodYellow"},
+        {"name":"jirafa","age":10,"color":"LightSalmon"}
+    ]
+}
